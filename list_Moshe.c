@@ -6,12 +6,12 @@
 void proc1(int pipe[]) { 
   int close1 = close(pipe[0]);
    if (close1 == -1) {
-    perror("Failed to close.");
+    perror("There was an error and we failed to close.");
     exit(EXIT_FAILURE);
   }
   int dupc1 = dup2(pipe[1], STDOUT_FILENO );
   if (dupc1 < 0) {
-    perror("The Dup2 function failed for Process 1.");
+    perror("Unfortuntely the Dup2 function failed for Process 1.");
     exit(EXIT_FAILURE);
   }
       char * command[3];
@@ -31,7 +31,7 @@ void proc2(int pipe[]) {
   }
   int dupc2 = dup2(pipe[0], STDIN_FILENO); 
   if (dupc2 < 0) {
-    perror("The Dup2 function failed for Process 2.");
+    perror("Unfortuntely Dup2 function failed for Process 2.");
     exit(EXIT_FAILURE);
   }
   char * command[3];
@@ -49,10 +49,10 @@ int list_Moshe() {
   int lpipe = pipe(pipe_fd);
  
   if (lpipe == -1) {
-    perror("Pipe creation failure");
+    perror("There was an error creating the Pipe");
     exit(EXIT_FAILURE);
   }
-  // clear screen first
+
   system("clear");
   int pid1, pid2;
   switch (pid1 = fork()) {
@@ -85,15 +85,18 @@ int list_Moshe() {
       perror("Failed to close.");
       exit(EXIT_FAILURE);
     }
-    // wait for both children
+// here i will wait for both children 
+
+
+
     int wait1 = wait(NULL); 
     if (wait1 == -1) {
-      perror("Wait Failure.");
+      perror("Sorry, there was a failure waiting so we got impatient and could not wait any longer.");
       exit(EXIT_FAILURE);
     }
    int wait2 = wait(NULL); 
     if (wait2 == -1) {
-      perror("Wait Failure");
+      perror("Sorry, there was a failure waiting so we got impatient and could not wait any longer.");
       exit(EXIT_FAILURE);
     }  
     char old[] = "t1.txt";
@@ -104,5 +107,4 @@ int list_Moshe() {
    } else {
       perror("There was an issue and we could not rename the file for you.");
    }
-   // exit(EXIT_SUCCESS);
 }
