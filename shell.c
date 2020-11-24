@@ -12,8 +12,6 @@
 #include "exit_Gurjit.c"
 
 char current[1024]; // Global Current Directory, In Case It Gets Changed
-char commands[1024][50];
-int count = 0;
 
 void currentDirectory(){ // Outputs Current Directory Using Global Variable
 	printf("user@user:~%s->",current);
@@ -39,38 +37,36 @@ void myShell(){
 		fgets(input,1024,stdin); // Obtain Input
 		int length = strlen(input); // Get Length of Input
 		input[length-1]='\0'; // Limit The length so it Isn't 1024.
-		//strcpy(commands[count++],input);
 		if(strcmp(input,"help") == 0){ // Help
 			help();
 		}
-		else if(strcmp(input,"tree") == 0){ // Tree
-			tree_Radensky(NULL);
+		else if(strcmp(input,"tree") == 0){
+			tree_Radensky();
 			updateListOfCommands("tree");
 			//getcwd(current, sizeof(current));
 		}
-		else if(strcmp(input,"list") == 0){ // List
-			list_Moshe(NULL);
+		else if(strcmp(input,"list") == 0){
+			list_Moshe();
 			updateListOfCommands("list");
 		}
-		else if(strcmp(input,"path") == 0){ // Path
-			path_Raul(NULL);
+		else if(strcmp(input,"path") == 0){
+			path_Raul();
 			updateListOfCommands("path");
 		}
-		else if(strcmp(input,"special") == 0){ // Special
-			special_Bingjing(NULL);
+		else if(strcmp(input,"special") == 0){ 
+			special_Bingjing();
 			updateListOfCommands("special");
 		}
-		else if(strcmp(input,"exit") == 0){ // Exit
+		else if(strcmp(input,"exit") == 0){ 
 			break;
 		}
-		else{ // Incorrect Input
-			printf("Invalid Input, You Inputted %s. Type 'help' For List of Commands. \n", input);
+		else{ 
+			printf("%s : The term %s is not recognized as the name of a command\n", input,input);
 		}
 	}
-	exit_Gurjit(); // Exit
+	exit_Gurjit();
 }
 
-int main (){ // Main
-	myShell(); // Shell Function
-	return 0;
+void main(){ 
+	myShell();// run the shell command
 }
