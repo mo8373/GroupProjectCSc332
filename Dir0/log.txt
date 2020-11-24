@@ -1,0 +1,7 @@
+total 8
+drwxr-xr-x 2 bshady bshady 4096 Nov 23 21:37 Dir1
+-rw-r--r-- 1 bshady bshady  250 Nov 23 21:38 log.txt
+-rw-r--r-- 1 bshady bshady    0 Nov 23 21:42 t1.txt
+-rw-r--r-- 1 bshady bshady    0 Nov 23 21:42 t2.txt
+-rw-r--r-- 1 bshady bshady    0 Nov 23 21:42 t3.txt
+/home/bshady/GroupProjectCSc332/Dir0

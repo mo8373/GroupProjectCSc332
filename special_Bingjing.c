@@ -3,7 +3,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int main()
+int special_Bingjing()
 {
     int pipefd[2];
     pid_t pid1, pid2;

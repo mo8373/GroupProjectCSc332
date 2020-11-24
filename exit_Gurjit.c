@@ -4,7 +4,7 @@
 #include <stdlib.h>
 
 #define COMMAND_LEN 4 //constant used as last 4 commands need to be printed
-char listOfCommands[COMMAND_LEN]; //array of size 4 to keep the commands
+char listOfCommands[COMMAND_LEN][1024]; //array of size 4 to keep the commands
 
 //this function takes in the user input and inserts into the array
 //it will keep shifting the list to the left as more commands come in
@@ -17,11 +17,12 @@ void updateListOfCommands(char newCommand[]){
 }
 //this function will be used right before exiting as it will print the commands
 void printLastFourCommands() {
-	printf("\nLast Five Commands: \n\n");
+	printf("\nLast Four Commands: \n");
 	for(int i = 0; i < COMMAND_LEN; i++){
 		if (listOfCommands[i] != NULL)
-			printf("%s", listOfCommands[i]);
-	}    
+			printf("%s\n", listOfCommands[i]);
+	} 
+    printf("\n");   
 }
 //printing a list of contents in the current directory
 void listCurrentDir() {
@@ -39,9 +40,16 @@ void listCurrentDir() {
     closedir(dir); 
 }
 
-void exit() {
+void exit_Gurjit() {
     listCurrentDir();
     printLastFourCommands();
+
+    printf("Hit Enter to exit the SHELL...");
+    char input[1024]; // String To Take Input
+	fgets(input,1024,stdin); // Obtain Input
+    if (strcmp(input, "\0" ) == 0){
+        exit(EXIT_SUCCESS); //CALL THE EXIT FUNCTION WHICH WILL PRINT THE LAST 4 COMMANDS AND CONTENT IN DIR
+    }
 }
 /* 
 **************************************

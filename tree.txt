@@ -1,0 +1,15 @@
+total 116
+drwxr-xr-x 3 bshady bshady  4096 Nov 23 21:52 Dir0
+-rw-r--r-- 1 bshady bshady 48780 Nov 23 20:24 Group Project.pdf
+-rw-r--r-- 1 bshady bshady    20 Nov 23 20:24 README.md
+-rw-r--r-- 1 bshady bshady  2509 Nov 23 21:40 exit_Gurjit.c
+-rw-r--r-- 1 bshady bshady  2692 Nov 23 21:11 list_Moshe.c
+-rw-r--r-- 1 bshady bshady    31 Nov 23 20:52 path-info.txt
+-rw-r--r-- 1 bshady bshady  2071 Nov 23 21:11 path_Raul.c
+-rwxr-xr-x 1 bshady bshady 26952 Nov 23 21:53 shell
+-rw-r--r-- 1 bshady bshady  3222 Nov 23 21:53 shell.c
+-rw-r--r-- 1 bshady bshady  1311 Nov 23 21:18 special_Bingjing.c
+-rw-r--r-- 1 bshady bshady     0 Nov 23 21:53 t1.txt
+-rw-r--r-- 1 bshady bshady     0 Nov 23 20:52 t3.txt
+-rw-r--r-- 1 bshady bshady   812 Nov 23 21:52 tree.txt
+-rw-r--r-- 1 bshady bshady  1634 Nov 23 21:12 tree_Radensky.c

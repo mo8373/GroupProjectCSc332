@@ -44,7 +44,7 @@ void proc2(int pipe[]) {
       }
 }
  
-int main () {
+int list_Moshe() {
   int pipe_fd[2];
   int lpipe = pipe(pipe_fd);
  
@@ -104,5 +104,5 @@ int main () {
    } else {
       perror("There was an issue and we could not rename the file for you.");
    }
-    exit(EXIT_SUCCESS);
+   // exit(EXIT_SUCCESS);
 }
