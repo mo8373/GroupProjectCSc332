@@ -17,7 +17,6 @@ int count = 0;
 
 void currentDirectory(){ // Outputs Current Directory Using Global Variable
 	printf("user@user:~%s->",current);
-	updateListOfCommands("currentDirectory");
 }
 
 
